@@ -15,7 +15,8 @@ def hey():
         sepal_width = float(request.form['sepal_width'])
         petal_length = float(request.form['petal_length'])
         petal_width = float(request.form['petal_width'])
-        model = pickle.load (open('model.pkl'),'rb')
+        with open('model.pkl', 'rb') as file:
+        loaded_model = pickle.load(file)
         user_input = [[sepal_length, sepal_width, petal_length, petal_width]]
         prediction = model.predict([[float(user_input)]])
         predicted_species = iris.target_names[prediction][0]
@@ -27,4 +28,4 @@ def hey():
 
 
 if __name__ == '__main__':
-    app.run()
+   app.run(debug=True)
