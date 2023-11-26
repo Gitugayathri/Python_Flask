@@ -15,11 +15,14 @@ def hey():
         sepal_width = float(request.form['sepal_width'])
         petal_length = float(request.form['petal_length'])
         petal_width = float(request.form['petal_width'])
+        print("hhhhhhhhhhhhh ",sepal_length)
         model = pickle.load(open('model.pkl','rb'))
         
         user_input = [[sepal_length, sepal_width, petal_length, petal_width]]
-        prediction = model.predict([[float(user_input)]])
-        predicted_species = iris.target_names[prediction][0]
+        prediction = model.predict(user_input)
+        if(prediction==0):
+            predicted_species = "Iris-setosa"
+        elif()
 
         return render_template('result.html', species=predicted_species)
     
