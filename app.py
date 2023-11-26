@@ -24,10 +24,10 @@ def hey():
             predicted_species = "Iris-setosa"
         elif(prediction==1):
             predicted_species = "Iris-versicolor"
-        else(prediction==2):
+        else:
             predicted_species = "Iris-virginica"
 
-        return render_template('result.html', species=predicted_species)
+       
     
     return render_template('index.html')
 
