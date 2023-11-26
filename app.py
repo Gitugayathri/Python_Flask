@@ -29,7 +29,7 @@ def hey():
 
        
     
-    return render_template('index.html', predicted_species==predicted_species)
+    return render_template('index.html')
 
 
 
