@@ -22,7 +22,10 @@ def hey():
         prediction = model.predict(user_input)
         if(prediction==0):
             predicted_species = "Iris-setosa"
-        elif()
+        elif(prediction==1):
+            predicted_species = "Iris-versicolor"
+        else(prediction==2):
+            predicted_species = "Iris-virginica"
 
         return render_template('result.html', species=predicted_species)
     
